@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#name").val().trim(),
+        id: $("id").val().trim(),
+        email: $("#email").val().trim(),
+        phone: $("#phone").val().trim(),
+        number: $("#number").val.trim(),
+      };
+
+      $.post("/api/add", newReservation)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding new Reservation...");
+        });
+    });
+
+    function startQuery() {        
+        // query 
+        let queryURL ='https://api';
+          // Ajax query 
+          $.ajax({
+              url: queryURL,
+              method: "GET"
+          })
+          .then(function(response5Day) {
+            console.log()
+          });
+    };
+  </script>
